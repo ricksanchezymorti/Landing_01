@@ -1,0 +1,67 @@
+---
+const problems = [
+  {
+    icon: "wallet",
+    text: "Tienen ahorros pero no están creciendo",
+  },
+  {
+    icon: "question",
+    text: "No saben si su dinero les alcanzará",
+  },
+  {
+    icon: "shield",
+    text: "Dependen únicamente del Seguro Social",
+  },
+  {
+    icon: "eye",
+    text: "No conocen opciones diseñadas para planificación",
+  },
+];
+---
+
+<section class="section section--white section--problem">
+  <div class="container">
+    <div class="section-heading section-heading--center problem-heading">
+      <p class="eyebrow">¿TE IDENTIFICAS?</p>
+      <h2>Muchas personas llegan al retiro sin un plan claro</h2>
+    </div>
+
+    <div class="problem-grid">
+      {problems.map((problem) => (
+        <article class="problem-card">
+          <div class="problem-card__icon" data-icon={problem.icon} aria-hidden="true">
+            {problem.icon === "wallet" && (
+              <svg viewBox="0 0 24 24">
+                <path d="M4 7.5h14.5A2.5 2.5 0 0 1 21 10v8a2.5 2.5 0 0 1-2.5 2.5h-14A2.5 2.5 0 0 1 2 18V6a2.5 2.5 0 0 1 2.5-2.5H17" />
+                <path d="M4 7.5 17 3.5v4" />
+                <path d="M17 13h4" />
+                <circle cx="17" cy="13" r="1" />
+              </svg>
+            )}
+            {problem.icon === "question" && (
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9.5" />
+                <path d="M9.6 9.2a2.8 2.8 0 0 1 5.2 1.4c0 2.4-2.8 2.5-2.8 4.6" />
+                <path d="M12 18h.01" />
+              </svg>
+            )}
+            {problem.icon === "shield" && (
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3.5 19 6v5.4c0 4.4-2.8 7.6-7 9.1-4.2-1.5-7-4.7-7-9.1V6l7-2.5Z" />
+                <path d="m8.8 12 2.1 2.1 4.4-4.6" />
+              </svg>
+            )}
+            {problem.icon === "eye" && (
+              <svg viewBox="0 0 24 24">
+                <path d="M3 12s3.3-5.5 9-5.5S21 12 21 12s-3.3 5.5-9 5.5S3 12 3 12Z" />
+                <circle cx="12" cy="12" r="2.5" />
+                <path d="M4 4 20 20" />
+              </svg>
+            )}
+          </div>
+          <p>{problem.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

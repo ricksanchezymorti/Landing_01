@@ -1,0 +1,356 @@
+---
+/*
+  Integración con Zoho Forms:
+  Usamos el action de Zoho y coinciden exactamente los names de cada input/select.
+*/
+const formAction = "https://forms.zohopublic.com/valbuenaredesgm1/form/FormLadingcard/formperma/i-1buxd_5XNuWTTPnYUebQsoy82Ugpa0DWlqP-ro5pk/htmlRecords/submit";
+---
+
+<iframe class="hidden-iframe" name="hidden_iframe" id="hidden_iframe" onload="if(window.submitted) { document.getElementById('success-modal').style.display='flex'; document.body.style.overflow='hidden'; document.querySelector('.lead-form').reset(); window.submitted=false; }"></iframe>
+
+<aside class="lead-card" id="formulario">
+  <div class="lead-card__header">
+    <h2>Solicita información</h2>
+    <p>Completa el formulario y un agente licenciado se comunicará contigo</p>
+  </div>
+
+    <form class="lead-form" action={formAction} name="form" id="form" method="POST" target="hidden_iframe" onsubmit="window.submitted=true;" accept-charset="UTF-8" enctype="multipart/form-data">
+    <input type="hidden" name="zf_referrer_name" value="" />
+    <input type="hidden" name="zf_redirect_url" value="" />
+    <input type="hidden" name="zc_gad" value="" />
+
+    <div class="lead-form__fields">
+      <div class="lead-form__group">
+        <span class="lead-form__label">Nombre completo <span class="lead-form__required">*</span></span>
+        <div class="form-grid">
+          <label>
+            <div class="field-control">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <input type="text" maxlength="255" name="Name_First" fieldType="7" placeholder="Nombre" autocomplete="given-name" required />
+            </div>
+          </label>
+          <label>
+            <div class="field-control">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <input type="text" maxlength="255" name="Name_Last" fieldType="7" placeholder="Apellido" autocomplete="family-name" required />
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <label>
+        <span>Email <span class="lead-form__required">*</span></span>
+        <div class="field-control">
+          <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          <input type="email" name="Email" fieldType="9" placeholder="" autocomplete="email" required />
+        </div>
+      </label>
+
+      <label>
+        <span>Teléfono <span class="lead-form__required">*</span></span>
+        <div class="field-control">
+          <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92Z" />
+          </svg>
+          <input type="tel" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="20" fieldType="11" id="international_PhoneNumber_countrycode" placeholder="" autocomplete="tel" required />
+        </div>
+      </label>
+
+      <label class="lead-form__select-field">
+        <span>¿Buscas opciones para tu retiro? <span class="lead-form__required">*</span></span>
+        <select name="Dropdown" required>
+          <option value="" disabled selected hidden>Selecciona una opción</option>
+          <option value="Quiero conocer mis opciones">Quiero conocer mis opciones</option>
+          <option value="Estoy investigando para el futuro">Estoy investigando para el futuro</option>
+          <option value="Solo quiero información general">Solo quiero información general</option>
+          <option value="Quiero hablar con un asesor">Quiero hablar con un asesor</option>
+        </select>
+      </label>
+
+      <label class="lead-form__select-field">
+        <span>¿Cuál es tu rango de edad? <span class="lead-form__required">*</span></span>
+        <select name="Dropdown1" required>
+          <option value="" disabled selected hidden>Selecciona un rango</option>
+          <option value="Entre 21 a 29">Entre 21 a 29</option>
+          <option value="Entre 30 a 39">Entre 30 a 39</option>
+          <option value="Entre 40 a 49">Entre 40 a 49</option>
+          <option value="Entre 50 a 59">Entre 50 a 59</option>
+          <option value="Entre 60 a 69">Entre 60 a 69</option>
+          <option value="+70">+70</option>
+        </select>
+      </label>
+
+      <label class="lead-form__select-field">
+        <span>¿En qué etapa estás? <span class="lead-form__required">*</span></span>
+        <select name="Dropdown2" required>
+          <option value="" disabled selected hidden>Selecciona una opción</option>
+          <option value="Planeo retirarme en los próximos 1-5 años">Planeo retirarme en los próximos 1-5 años</option>
+          <option value="Planeo retirarme en 5-10 años">Planeo retirarme en 5-10 años</option>
+          <option value="Faltan más de 10 años">Faltan más de 10 años</option>
+          <option value="Faltan más de 15 años">Faltan más de 15 años</option>
+          <option value="Faltan más de 20 años">Faltan más de 20 años</option>
+          <option value="Solo estoy explorando opciones">Solo estoy explorando opciones</option>
+          <option value="Ya estoy retirado/a">Ya estoy retirado/a</option>
+        </select>
+      </label>
+
+      <label class="lead-form__select-field">
+        <span>¿Ya cuentas con una base inicial? <span class="lead-form__required">*</span></span>
+        <select name="Dropdown4" required>
+          <option value="" disabled selected hidden>Selecciona una opción</option>
+          <option value="Estoy comenzando">Estoy comenzando</option>
+          <option value="Menos de 10,000">Menos de 10,000</option>
+          <option value="10,000 – 25,000">10,000 – 25,000</option>
+          <option value="25,000 – 50,000">25,000 – 50,000</option>
+          <option value="50,000 – 100,000">50,000 – 100,000</option>
+          <option value="Más de 100,000">Más de 100,000</option>
+        </select>
+      </label>
+
+      <label class="lead-form__select-field">
+        <span>¿Qué aporte mensual considerarías? <span class="lead-form__required">*</span></span>
+        <select name="Dropdown3" required>
+          <option value="" disabled selected hidden>Selecciona una opción</option>
+          <option value="Menos de 100 al mes">Menos de 100 al mes</option>
+          <option value="100 – 200 al mes">100 – 200 al mes</option>
+          <option value="200 – 500 al mes">200 – 500 al mes</option>
+          <option value="500 – 1,000 al mes">500 – 1,000 al mes</option>
+          <option value="Prefiero comentarlo con el asesor">Prefiero comentarlo con el asesor</option>
+        </select>
+      </label>
+
+      <label>
+        <span>¿En qué Estado o Ciudad te encuestras? <span class="lead-form__required">*</span></span>
+        <div class="field-control">
+          <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <input type="text" name="SingleLine" fieldType="1" maxlength="255" placeholder="" required />
+        </div>
+      </label>
+    </div> <!-- CLOSED FLEX COLUMN -->
+
+    <div class="lead-form__terms">
+      <label class="checkbox-label lead-form__checkbox">
+        <input class="lead-form__checkbox-input" type="checkbox" name="TermsConditions" required />
+        <span class="lead-form__checkbox-text">Acepto los términos y condiciones <span class="lead-form__required">*</span></span>
+      </label>
+    </div>
+
+    <button class="button button--primary button--full lead-form__submit" type="submit">
+      Solicitar asesoramiento
+      <span aria-hidden="true">&rarr;</span>
+    </button>
+
+    <div class="lead-form__security">
+      <p>
+        <svg class="lead-form__security-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        Tus datos están protegidos y serán tratados de forma confidencial.
+      </p>
+    </div>
+  </form>
+</aside>
+
+<style is:global>
+  /* Estilos para el select personalizado */
+  .custom-select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .custom-select-trigger {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid #d8e0eb;
+    border-radius: 10px;
+    padding: 0 34px 0 13px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.84rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .custom-select-wrapper.open .custom-select-trigger {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 3px rgba(21, 95, 190, 0.08);
+  }
+  .custom-select-trigger svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #475569;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
+  .custom-select-trigger.is-placeholder .value {
+    color: #94a3b8;
+  }
+  .custom-select-trigger .value {
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .custom-select-wrapper.open .custom-select-trigger svg {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .custom-select-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #d8e0eb;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(4, 9, 21, 0.12);
+    z-index: 100;
+    max-height: 250px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .custom-select-wrapper.open .custom-select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .custom-select-item {
+    padding: 12px 14px;
+    font-size: 0.86rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.3;
+  }
+  .custom-select-item:not(:last-child) {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .custom-select-item:hover, .custom-select-item.selected {
+    background-color: #f8fafc;
+    color: var(--blue-600);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lead-form select').forEach(select => {
+      // Create wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = 'custom-select-wrapper';
+      
+      // Ensure parent label is relative for absolute positioning of select
+      if (select.parentNode && select.parentNode.tagName === 'LABEL') {
+        select.parentNode.style.position = 'relative';
+      }
+
+      // Create Trigger
+      const trigger = document.createElement('div');
+      trigger.className = 'custom-select-trigger';
+      if (select.selectedIndex === 0) {
+        trigger.classList.add('is-placeholder');
+      }
+      trigger.innerHTML = `
+        <span class="value">
+          ${select.options[select.selectedIndex].text}
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      `;
+      
+      // Create Dropdown
+      const dropdown = document.createElement('div');
+      dropdown.className = 'custom-select-dropdown';
+      
+      // Populate Dropdown
+      Array.from(select.options).forEach((option, index) => {
+        if(index === 0) return; // Skip placeholder option
+        const item = document.createElement('div');
+        item.className = 'custom-select-item';
+        item.textContent = option.text;
+        item.dataset.value = option.value;
+        item.addEventListener('click', () => {
+          select.value = option.value;
+          trigger.querySelector('.value').textContent = option.text;
+          trigger.classList.remove('is-placeholder');
+          
+          wrapper.classList.remove('open');
+          dropdown.querySelectorAll('.custom-select-item').forEach(el => el.classList.remove('selected'));
+          item.classList.add('selected');
+          
+          // Clear error state if any
+          trigger.style.borderColor = '';
+        });
+        dropdown.appendChild(item);
+      });
+
+      // Hide original select visually but keep it focusable for validation errors
+      select.style.position = 'absolute';
+      select.style.opacity = '0';
+      select.style.pointerEvents = 'none';
+      select.style.height = '0px';
+      select.style.width = '100%';
+      select.style.bottom = '10px'; // So the tooltip points near the bottom of the field
+      select.style.left = '0';
+      select.style.zIndex = '-1';
+      select.tabIndex = -1;
+
+      // Handle Trigger Clicks
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = wrapper.classList.contains('open');
+        // Close others
+        document.querySelectorAll('.custom-select-wrapper').forEach(w => w.classList.remove('open'));
+        if (!isOpen) { 
+          wrapper.classList.add('open');
+        }
+      });
+
+      // Handle Native Form Validation Errors
+      select.addEventListener('invalid', (e) => {
+         trigger.style.borderColor = '#ef4444'; // Red border on error
+      });
+      
+      // Reset logic
+      if (select.form) {
+        select.form.addEventListener('reset', () => {
+          setTimeout(() => {
+            trigger.querySelector('.value').textContent = select.options[0].text;
+            trigger.classList.add('is-placeholder');
+            dropdown.querySelectorAll('.custom-select-item').forEach(el => el.classList.remove('selected'));
+            trigger.style.borderColor = '';
+          }, 10);
+        });
+      }
+
+      wrapper.appendChild(trigger);
+      wrapper.appendChild(dropdown);
+      // Insert right after the select
+      select.parentNode.insertBefore(wrapper, select.nextSibling);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.custom-select-wrapper').forEach(w => w.classList.remove('open'));
+    });
+  });
+</script>

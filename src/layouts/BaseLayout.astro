@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Planifica tu retiro con seguridad",
+  description = "Protege tu capital, participa del crecimiento del mercado y planifica tu retiro con estabilidad a largo plazo",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/og-image.jpg" />
+
+    <link rel="icon" href="/images/logo-vba-insurance.svg" type="image/svg+xml" />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-W4ZFHBTC');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body id="top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W4ZFHBTC"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <slot />
+    
+    <div id="success-modal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-icon">
+          <div class="modal-icon__halo"></div>
+          <div class="modal-icon__halo modal-icon__halo--inner"></div>
+          <div class="modal-icon__check">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="modal-copy">
+          <h3>¡Gracias por tu interés!</h3>
+          <p>
+            Hemos recibido tu información con éxito. Un agente certificado de <strong>Valbuena Brokers &amp; Associates</strong> se comunicará contigo muy pronto
+          </p>
+        </div>
+
+        <button class="modal-close" type="button" onclick="document.getElementById('success-modal').style.display='none'; document.body.style.overflow='';">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

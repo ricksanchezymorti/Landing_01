@@ -1,0 +1,42 @@
+---
+const bullets = [
+  "Agentes licenciados con experiencia en planificación de retiro",
+  "Estrategias adaptadas a tus objetivos y necesidades",
+  "Acompañamiento profesional en cada etapa del proceso",
+];
+---
+
+<section class="section section--white section--person">
+  <div class="container why-grid">
+    <div class="why-grid__intro">
+      <p class="eyebrow">¿POR QUÉ TRABAJAR CON NOSOTROS?</p>
+      <h2>Asesoría personalizada. Soluciones a medida.</h2>
+
+      <ul class="check-list">
+        {bullets.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    <blockquote class="why-quote">
+      <p>
+        Mi compromiso es ayudarte a tomar decisiones financieras con claridad y confianza, para que puedas construir la vida que deseas.
+      </p>
+      <cite>
+        <div class="firma" aria-label="Firma de Victor Valbuena"></div>
+        <span class="why-quote__signature-text">Empresario y CEO fundador de VBA Insurance</span>
+      </cite>
+    </blockquote>
+
+    <div class="why-grid__image">
+      <img
+        src="/images/victor-standing.png"
+        alt="Victor Valbuena, asesor de seguros"
+        width="420"
+        height="520"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

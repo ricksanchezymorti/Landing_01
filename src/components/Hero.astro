@@ -1,0 +1,56 @@
+---
+import LeadForm from "./LeadForm.astro";
+---
+
+<section class="hero" id="inicio">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <div class="hero__logos" aria-label="Logos">
+        <div class="logo-item">
+          <img src="/images/logo-vba-insurance.svg" alt="VBA Insurance" class="logo-icon logo-vba-ins" />
+        </div>
+        <span class="logo-divider"></span>
+        <div class="logo-item">
+          <img src="/images/logo-victor-agency.svg" alt="Victor Valbuena Agency" class="logo-icon logo-victor" />
+        </div>
+        <span class="logo-divider"></span>
+        <div class="logo-item">
+          <img src="/images/logo-vba-brokers.svg" alt="Valbuena Brokers & Associates" class="logo-icon logo-vba-bro" />
+        </div>
+      </div>
+
+      <p class="eyebrow">ANUALIDADES</p>
+
+      <h1 class="hero__title">
+        Construye hoy una vida de <em>libertad</em> y <em>confianza</em>
+      </h1>
+
+      <p class="hero__description hero__description--narrow">
+        Las anualidades pueden ayudarte a cuidar tu capital, acceder a estrategias vinculadas al crecimiento del mercado y planificar con visión a largo plazo.
+      </p>
+
+      <div class="hero__signature desktop-only">
+        <div class="firma" aria-label="Firma de Victor Valbuena"></div>
+        <span class="hero__signature-text">EMPRESARIO Y CEO FUNDADOR DE VBA INSURANCE</span>
+      </div>
+    </div>
+
+    <div class="hero__person" aria-hidden="true">
+      <img
+        src="/images/victor-hero.jpg"
+        class="hero__image"
+        alt=""
+        width="460"
+        height="620"
+        loading="eager"
+      />
+    </div>
+
+    <LeadForm />
+
+    <div class="hero__signature hero__signature--mobile mobile-only">
+      <div class="firma" aria-label="Firma de Victor Valbuena"></div>
+      <span class="hero__signature-text">EMPRESARIO Y CEO FUNDADOR DE VBA INSURANCE</span>
+    </div>
+  </div>
+</section>
